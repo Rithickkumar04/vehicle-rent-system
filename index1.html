@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Vehicle Rent System</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f2f2f2;
+text-align:center;
+}
+
+header{
+background:#222;
+color:white;
+padding:20px;
+}
+
+.container{
+margin:20px;
+}
+
+form{
+background:white;
+padding:20px;
+margin:auto;
+width:300px;
+border-radius:10px;
+box-shadow:0px 0px 10px gray;
+}
+
+input, select{
+width:90%;
+padding:10px;
+margin:10px;
+}
+
+button{
+padding:10px 20px;
+background:#007BFF;
+color:white;
+border:none;
+border-radius:5px;
+}
+
+.result{
+margin-top:20px;
+font-weight:bold;
+}
+
+</style>
+
+<script>
+
+function calculateRent(){
+
+let vehicle=document.getElementById("vehicle").value;
+let days=document.getElementById("days").value;
+
+let price=0;
+
+if(vehicle=="R15") price=1200;
+if(vehicle=="Classic350") price=1500;
+if(vehicle=="Duke200") price=1400;
+
+if(vehicle=="Activa") price=800;
+if(vehicle=="Jupiter") price=750;
+if(vehicle=="Access") price=850;
+
+if(vehicle=="Swift") price=3000;
+if(vehicle=="i20") price=3200;
+if(vehicle=="Innova") price=5000;
+
+if(vehicle=="Tempo") price=11000;
+if(vehicle=="Hiace") price=12000;
+if(vehicle=="Force") price=11500;
+
+let total=price*days;
+
+document.getElementById("output").innerHTML=
+"Total Rent Price : ₹ "+total;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+<h1>Online Vehicle Rent System</h1>
+<p>Rent Bikes, Cars, Scooters and Vans Easily</p>
+</header>
+
+<div class="container">
+
+<h2>Vehicle Booking Form</h2>
+
+<form>
+
+<input type="text" placeholder="Customer Name" required>
+
+<select id="vehicle">
+
+<option value="">Select Vehicle</option>
+
+<option value="R15">Yamaha R15 - ₹1200</option>
+<option value="Classic350">Royal Enfield Classic 350 - ₹1500</option>
+<option value="Duke200">KTM Duke 200 - ₹1400</option>
+
+<option value="Activa">Honda Activa - ₹800</option>
+<option value="Jupiter">TVS Jupiter - ₹750</option>
+<option value="Access">Suzuki Access - ₹850</option>
+
+<option value="Swift">Maruti Swift - ₹3000</option>
+<option value="i20">Hyundai i20 - ₹3200</option>
+<option value="Innova">Toyota Innova - ₹5000</option>
+
+<option value="Tempo">Tempo Traveller - ₹11000</option>
+<option value="Hiace">Toyota Hiace - ₹12000</option>
+<option value="Force">Force Traveller - ₹11500</option>
+
+</select>
+
+<input type="number" id="days" placeholder="Number of Days">
+
+<button type="button" onclick="calculateRent()">
+Calculate Rent
+</button>
+
+<div id="output" class="result"></div>
+
+</form>
+
+</div>
+
+</body>
+</html>of
